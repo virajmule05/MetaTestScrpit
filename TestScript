@@ -1,0 +1,33 @@
+package BASIC1;
+
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MetaTest {
+	
+	public static void main(String[] args) {
+		
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		driver.get("https://ditaxpresso.com/#/contactus");
+		
+		driver.findElement(By.name("First Name")).sendKeys("viraj");
+		driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys("mule");
+		driver.findElement(By.name("Phone")).sendKeys("8668986506");
+		driver.findElement(By.name("Title")).sendKeys("software testing");
+		driver.findElement(By.name("Description")).sendKeys("I want number of company");
+		
+		driver.findElement(By.id("formsubmit")).click();
+		
+		
+		
+		
+	}
+
+}
